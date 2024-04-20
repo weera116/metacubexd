@@ -1,4 +1,4 @@
-# metacubexd
+docker compose pull && docker compose up -d# metacubexd
 
 Mihomo Dashboard, The Official One, XD
 
