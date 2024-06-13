@@ -1,16 +1,23 @@
-version: 2
-updates:
-  - package-ecosystem: npm
-    directory: /
-    schedule:
-      interval: daily
+version: '3'
 
-  - package-ecosystem: docker
-    directory: /
-    schedule:
-      interval: daily
+services:
+  metacubexd:
+    container_name: metacubexd
+    image: ghcr.io/metacubex/metacubexd
+    restart: always
+    ports:
+      - '80:80'
 
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: daily
+  # optional
+  meta:
+    container_name: meta
+    image: docker.io/metacubex/mihomo:Alpha
+    restart: always
+    pid: host
+    ipc: host
+    network_mode: host
+    cap_add:
+      - ALL
+    volumes:
+      - ./config.yaml:/root/.config/mihomo
+      - /dev/net/tun:/dev/net
