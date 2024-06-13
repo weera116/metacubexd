@@ -27,8 +27,8 @@ Cloudflare Pages: https://metacubexd.pages.dev
 
 ### Enable external-controller in your config file
 
-```yaml
-external-controller: 0.0.0.0:9090
+yaml
+external-controller: http://127.0.0.9:9090
 ```
 
 ### Use pre-built assets from gh-pages branch
